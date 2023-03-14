@@ -7,7 +7,49 @@
 <body>
 
 <script>
-    // TODO: Your JavaScript implementation for temperature conversion goes here.
+   function convertTemperature(temperature, fromUnit, toUnit) {
+if (fromUnit === "celsius") {
+    if (toUnit === "fahrenheit"){
+        return temperature * 9/5 + 32;
+    } else if (toUnit === "kelvin") {
+        return temperature + 273.15;
+    } else { 
+        return temperature;
+    }
+}
+
+if (fromUnit === "fahrenheit") {
+    if (toUnit === "celsius"){
+        return (temperature - 32) * 5/9;
+    } else if (toUnit === "kelvin") {
+        return (temperature - 32) + 5/9 + 273.15;
+    } else { 
+        return temperature;
+    }
+}
+
+if (fromUnit === "kelvin") {
+    if (toUnit === "celsius"){
+        return temperature - 273.15;
+    } else if (toUnit === "fahrenheit") {
+        return (temperature - 273.15) * 9/5 + 32;
+    } else { 
+        return temperature;
+    }
+}
+}
+    console.log(convertTemperature(35, "celsius", "fahrenheit"));
+    console.log(convertTemperature(35, "celsius", "kelvin"));
+    console.log(convertTemperature(35, "celsius", "celsius"));
+    console.log(convertTemperature(35, "kelvin", "fahrenheit"));
+    console.log(convertTemperature(35, "kelvin", "kelvin"));
+    console.log(convertTemperature(35, "kelvin", "celsius"));
+    console.log(convertTemperature(35, "fahrenheit", "fahrenheit"));
+    console.log(convertTemperature(35, "fahrenheit", "kelvin"));
+    console.log(convertTemperature(35, "fahrenheit", "celsius"));
+    console.log(convertTemperature(35, "degrees", "degrees"));
+    console.log(convertTemperature(35, "celsius", "degrees"));
+    console.log(convertTemperature(35, "degrees", "fahrenheit"));
 </script>
 </body>
 </html>
